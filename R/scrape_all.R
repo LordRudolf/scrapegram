@@ -18,6 +18,7 @@ scrape_all <- function(hashtags = NULL,
     }
   } else {
     if(!file.exists(path)) stop('The directory does not exist')
+    .srapegram$download_dir <<- path
   }
   dirCheck(path)
 
@@ -52,7 +53,7 @@ scrape_all <- function(hashtags = NULL,
 
         open_first_image()
 
-        scrape_photos(folder_name = new_user)
+        scrape_photos(folder_name = new_user, folder_name = new_user)
       } #end of user list loop
 
     } #end of hashtags loop

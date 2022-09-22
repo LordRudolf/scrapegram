@@ -31,6 +31,7 @@ scrape_photos <- function(path = NULL,
 
   right_arrow <- list(dummy = 'variable')
   counter <- 0
+  date_added <- format(Sys.Date(), '%Y')
 
   while(length(right_arrow) == 1) {
     counter <- counter + 1
@@ -97,7 +98,7 @@ scrape_photos <- function(path = NULL,
                                                                     value = "//button//div//span[@style ='display: inline-block; transform: rotate(90deg);']")
 
     #Check stop criteria
-    check_for_old_photo <- as.numeric(gsub('.*,', '',date_added))
+    check_for_old_photo <- as.numeric(gsub('.*,', '', date_added))
     if(is.na(check_for_old_photo)) check_for_old_photo <- 99999
     if(check_for_old_photo < oldest_photo & check_for_old_photo > 2012) right_arrow <- list() #No need downloading very old photos
     if(counter == max_img_downloads) right_arrow <- list() #300 photos per profile is more than enough
