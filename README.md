@@ -5,7 +5,7 @@
 1.	Set up the and ensure that your Selenium server is running. More info here: https://docs.ropensci.org/RSelenium/articles/basics.html#docker 
 2.	Install this package from Github:
 `devtools::install_github('LordRudolf/scrapegram')`
-3.	Open it:
+3.	Open it: 
 `library(scrapegram)`
 4.	Start a new browser session. If your Selenium is installed for a particular browser, remember to show it in the function arguments:
 `start_session(browser = 'firefox')`
